@@ -41,16 +41,16 @@ def create(images_filenames, audio_filename, output_filename):
 def main():
     parser = argparse.ArgumentParser(description='Generate a slideshow for a collection of images')
     parser.add_argument("create")
-    parser.add_argument("--images", nargs='*', default=get_default_image_filenames())
+    parser.add_argument("--image_filenames", nargs='*', default=get_default_image_filenames())
     parser.add_argument("--audio_filename", default=get_default_audio_filename())
     parser.add_argument("--output_filename", default=get_default_output_filename())
     args = parser.parse_args()
-    files = args.images + [args.audio_filename]
+    files = args.image_filenames + [args.audio_filename]
     for file_ in files:
         if not os.path.isfile(file_):
             sys.exit(f'Invalid image file {file_}')
 
-    create(args.images, args.audio_filename, args.output_filename)
+    create(args.image_filenames, args.audio_filename, args.output_filename)
 
 
 if __name__ == '__main__':

@@ -35,7 +35,7 @@ slideshows.create(image_filenames=['file.jpg'], audio_filename='audio_file.mp4',
 ## CLI
 
 ```bash
-slideshows create  --images file1.jpg file2.jpg \
+slideshows create  --image_filenames file1.jpg file2.jpg \
                    --audio_filename audio_file.mp4 \
                    --outputfile outputfile.mp4
 ```
